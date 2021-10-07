@@ -1,0 +1,26 @@
+query {
+  feed(createdAtMax: "2021-12-27T00:00:00Z") {
+    id
+    message
+    username
+  }
+}
+
+query {
+  lookaheadFeed(createdAtMax: "2009-12-27T00:00:00Z") {
+    id
+    message
+    user {
+      name: handle
+    }
+  }
+}
+
+mutation {
+  logIn(handle: "popular_girl", password: "password123") {
+    user {
+      id
+    }
+    token
+  }
+}
